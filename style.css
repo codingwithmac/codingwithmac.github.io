@@ -4,7 +4,7 @@
   --surface-light: #17233d;
   --text: #e7edf7;
   --muted: #9bacbf;
-  --accent: #62e6c4;
+  --accent: #4da3ff;
   --border: #263653;
   --max-width: 1080px;
 }
@@ -48,6 +48,17 @@ a:hover {
   color: var(--accent);
   font-size: 1.35rem;
   font-weight: 800;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 44px;
+  height: 44px;
+  display: block;
 }
 
 nav {
@@ -128,7 +139,7 @@ footer {
 }
 
 .primary:hover {
-  background: #94f2da;
+  background: #8ac5ff;
   color: #07111d;
   transform: translateY(-2px);
 }
