@@ -35,25 +35,30 @@ a:hover {
   color: var(--accent);
 }
 
-.site-header {
-  width: min(var(--max-width), calc(100% - 3rem));
-  margin: 0 auto;
-  min-height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  /* Keeps the header at the top while scrolling */
+.header-wrapper {
   position: sticky;
   top: 0;
   z-index: 1000;
 
-  /* Makes links readable over the page content */
   background: rgba(11, 17, 32, 0.92);
+  border-bottom: 1px solid rgba(38, 54, 83, 0.7);
+
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
 
-  border-bottom: 1px solid rgba(38, 54, 83, 0.7);
+.site-header {
+  width: min(var(--max-width), calc(100% - 3rem));
+  min-height: 80px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section {
+  scroll-margin-top: 100px;
 }
 
 
