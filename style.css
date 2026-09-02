@@ -42,7 +42,20 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  /* Keeps the header at the top while scrolling */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  /* Makes links readable over the page content */
+  background: rgba(11, 17, 32, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(38, 54, 83, 0.7);
 }
+
 
 .logo {
   color: var(--accent);
