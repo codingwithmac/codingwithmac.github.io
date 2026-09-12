@@ -382,8 +382,8 @@ img {
   gap: 8px;
   font-family: var(--font-mono);
   font-size: 0.825rem;
-  color:
-
+  color: var(--text-secondary);
+}
 .skills-list li {
   display: flex;
   align-items: center;
