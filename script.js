@@ -13,8 +13,16 @@ function hideAllPanels() {
 
 function deactivateAllButtons() {
   tabButtons.forEach(btn => {
-    btn.classList.remove('active');
+    btn.style.background = 'transparent';
+    btn.style.borderLeft = '2px solid var(--navy-light)';
+    btn.style.color = 'var(--text-secondary)';
   });
+}
+
+function activateButton(btn) {
+  btn.style.background = 'rgba(100,255,218,0.05)';
+  btn.style.borderLeft = '2px solid var(--green)';
+  btn.style.color = 'var(--green)';
 }
 
 function showPanel(id) {
@@ -36,17 +44,16 @@ if (tabPanels.length > 0) {
 
 // Set first button as active on load
 if (tabButtons.length > 0) {
-  tabButtons[0].classList.add('active');
+  activateButton(tabButtons[0]);
 }
 
 // Add click listener to each button
 tabButtons.forEach(button => {
   button.addEventListener('click', () => {
     const targetTab = button.getAttribute('data-tab');
-
     hideAllPanels();
     deactivateAllButtons();
     showPanel(targetTab);
-    button.classList.add('active');
+    activateButton(button);
   });
 });
