@@ -491,9 +491,11 @@ button {
 }
 
 .tab-btn:hover {
-  color: var(--teal);
-  background-color: var(--teal-dim);
+  background: rgba(100,255,218,0.05) !important;
+  border-left-color: var(--green) !important;
+  color: var(--green) !important;
 }
+
 
 .tab-btn.active {
   color: var(--teal);
