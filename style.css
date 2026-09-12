@@ -979,3 +979,15 @@ img {
   }
 }
 
+/* ============================================
+   TAB PANEL FIX
+============================================ */
+.tab-panel {
+  display: none !important;
+}
+
+.tab-panel.active {
+  display: block !important;
+  animation: fadeIn 0.3s ease;
+}
+
