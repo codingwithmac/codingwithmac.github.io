@@ -77,6 +77,7 @@ img {
   padding: 0 80px;
   max-width: 900px;
   margin-right: auto;
+  padding-right: calc(80px + var(--sidebar-width));
 }
 
 
