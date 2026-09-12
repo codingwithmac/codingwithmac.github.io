@@ -85,9 +85,20 @@ tabButtons.forEach(button => {
 
     // Add active to clicked button and matching panel
     button.classList.add('active');
-    document.getElementById(targetTab).classList.add('active');
+
+    const targetPanel = document.getElementById(targetTab);
+    if (targetPanel) {
+      targetPanel.classList.add('active');
+    }
   });
 });
+
+// Make sure first tab is active on page load
+if (tabButtons.length > 0 && tabPanels.length > 0) {
+  tabButtons[0].classList.add('active');
+  tabPanels[0].classList.add('active');
+}
+
 
 
 // ============================================
