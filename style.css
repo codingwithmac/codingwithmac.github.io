@@ -452,12 +452,14 @@ img {
 .tabs-container {
   display: flex;
   gap: 40px;
+  align-items: flex-start;
 }
 
 .tab-buttons {
   display: flex;
   flex-direction: column;
-  min-width: 180px;
+  min-width: 200px;
+  flex-shrink: 0;
   border-left: 2px solid var(--navy-lighter);
 }
 
@@ -466,15 +468,16 @@ img {
   border: none;
   border-left: 2px solid transparent;
   margin-left: -2px;
-  padding: 12px 20px;
+  padding: 14px 20px;
   text-align: left;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-secondary);
   cursor: pointer;
   transition: var(--transition);
   white-space: nowrap;
   letter-spacing: 0.5px;
+  line-height: 1.4;
 }
 
 .tab-btn:hover {
@@ -486,6 +489,11 @@ img {
   color: var(--teal);
   border-left: 2px solid var(--teal);
   background-color: var(--teal-dim);
+}
+
+.tab-panels {
+  flex: 1;
+  min-width: 0;
 }
 
 .tab-panel {
