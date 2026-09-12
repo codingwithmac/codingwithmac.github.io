@@ -900,7 +900,7 @@ button {
 /* ============================================
    RESPONSIVE — MOBILE
 ============================================ */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
   .sidebar {
     display: none;
@@ -1000,15 +1000,4 @@ button {
   }
 }
 
-/* ============================================
-   TAB PANEL FIX
-============================================ */
-.tab-panel {
-  display: none !important;
-}
-
-.tab-panel.active {
-  display: block !important;
-  animation: fadeIn 0.3s ease;
-}
 
