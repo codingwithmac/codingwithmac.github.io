@@ -14,18 +14,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function deactivateAllButtons() {
-    tabButtons.forEach(btn => {
-      btn.style.background = 'transparent';
-      btn.style.borderLeft = '2px solid var(--navy-light)';
-      btn.style.color = 'var(--text-secondary)';
-    });
-  }
+  tabButtons.forEach(btn => {
+    btn.style.background = 'transparent';
+    btn.style.borderLeftColor = 'var(--navy-light)';
+    btn.style.borderLeftWidth = '2px';
+    btn.style.borderLeftStyle = 'solid';
+    btn.style.color = 'var(--text-secondary)';
+  });
+}
 
-  function activateButton(btn) {
-    btn.style.background = 'rgba(100,255,218,0.05)';
-    btn.style.borderLeft = '2px solid var(--green)';
-    btn.style.color = 'var(--green)';
-  }
+function activateButton(btn) {
+  btn.style.background = 'rgba(100,255,218,0.05)';
+  btn.style.borderLeftColor = 'var(--green)';
+  btn.style.borderLeftWidth = '2px';
+  btn.style.borderLeftStyle = 'solid';
+  btn.style.color = 'var(--green)';
+}
+
 
   function showPanel(id) {
     const panel = document.getElementById(id);
