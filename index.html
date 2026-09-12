@@ -3,210 +3,421 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Mario | Python Developer</title>
-  <meta
-    name="description"
-    content="Portfolio website for Mario, a Python developer."
-  />
-  <link rel="icon" type="image/svg+xml" href="logo.svg" />
-  <link rel="stylesheet" href="style.css" />
+  <title>Mario Centis | Python Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
- <header class="header-wrapper">
-  <div class="site-header">
-    <a class="logo" href="#home" aria-label="Mario's home page">
-      <img src="logo.svg" alt="MAC logo" />
-    </a>
 
-    <nav aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <!-- placing this line of code below the 'a' tag makes Resume into a button:
-      class="resume-button"
-      -->
-      <a
-        
-        href="mario_centis_resume.pdf"
-        target="_blank"
-        rel="noopener"
-      >
-        Resume
+  <!-- ========== LEFT SIDEBAR ========== -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-top">
+      <div class="sidebar-photo-wrapper">
+        <img src="assets/mario-photo.jpg" alt="Mario Centis" class="sidebar-photo" />
+      </div>
+      <h1 class="sidebar-name">Mario Centis</h1>
+      <h2 class="sidebar-title">Python Developer</h2>
+      <p class="sidebar-tagline">I build useful, thoughtful Python projects.</p>
+
+      <!-- Desktop Navigation -->
+      <nav class="sidebar-nav" id="desktop-nav">
+        <ul>
+          <li><a href="#about" class="nav-link active"><span class="nav-number">01.</span> About</a></li>
+          <li><a href="#experience" class="nav-link"><span class="nav-number">02.</span> Experience</a></li>
+          <li><a href="#projects" class="nav-link"><span class="nav-number">03.</span> Projects</a></li>
+          <li><a href="#contact" class="nav-link"><span class="nav-number">04.</span> Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sidebar-bottom">
+      <a href="assets/mario-centis-resume.pdf" target="_blank" class="resume-btn">
+        <i class="fas fa-file-alt"></i> Resume
       </a>
-      
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-
-  <main>
-    <section id="home" class="hero">
-      <p class="eyebrow">Hello, I’m</p>
-      <h1>Mario.</h1>
-      <h2>I build useful, thoughtful Python projects.</h2>
-
-      <p class="hero-text">
-        I’m a developer interested in building clean, accessible, and
-        user-friendly applications. I enjoy turning ideas into real products.
-      </p>
-
-      <div class="hero-links">
-        <a class="button primary" href="#projects">View my projects</a>
-        <a
-          class="button secondary"
-          href="https://github.com/codingwithmac"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub
+      <div class="social-links">
+        <a href="https://github.com/codingwithmac" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/mariocentis/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:info@mariocentis.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
         </a>
       </div>
-    </section>
+    </div>
 
+  </aside>
+
+  <!-- ========== MOBILE HEADER ========== -->
+  <header class="mobile-header" id="mobile-header">
+    <span class="mobile-name">Mario Centis</span>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+    <ul>
+      <li><a href="#about" class="mobile-nav-link"><span class="nav-number">01.</span> About</a></li>
+      <li><a href="#experience" class="mobile-nav-link"><span class="nav-number">02.</span> Experience</a></li>
+      <li><a href="#projects" class="mobile-nav-link"><span class="nav-number">03.</span> Projects</a></li>
+      <li><a href="#contact" class="mobile-nav-link"><span class="nav-number">04.</span> Contact</a></li>
+    </ul>
+    <a href="assets/mario-centis-resume.pdf" target="_blank" class="resume-btn mobile-resume-btn">
+      <i class="fas fa-file-alt"></i> Resume
+    </a>
+  </div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="main-content">
+
+    <!-- ===== SECTION 01 — ABOUT ===== -->
     <section id="about" class="section">
-      <p class="section-label">01. About me</p>
-      <div class="section-content">
-        <div>
-          <h2>A little about me</h2>
+      <h2 class="section-heading">
+        <span class="section-number">01.</span> About Me
+        <span class="section-line"></span>
+      </h2>
+
+      <div class="about-grid">
+        <div class="about-text">
           <p>
-            I am a developer based in Beaumont, Canada, focused on building practical,
-            user-friendly applications. I enjoy solving problems, learning new
-            technologies, and turning ideas into useful projects.
+            I am a Python developer based in Beaumont with a background in IT that gave me a deep
+            appreciation for automation and scripting. It started with PowerShell — I loved the idea
+            that a few lines of code could eliminate hours of manual work.
           </p>
           <p>
-            I have expanded my skills in Python development, databases,
-            automation, video game development, and writing clean, maintainable code.
+            When I discovered Python, that passion grew into something bigger. The language is
+            remarkably powerful and I have used it to build tools that solve problems I was personally
+            frustrated with — from tracking prices on items I buy regularly, to organizing cluttered
+            file systems, to generating secure passwords on demand.
           </p>
           <p>
-            When I’m not coding, you can usually find me gaming, 
-            following the latest technology, keeping up with all things Apple, or taking my dog Sonic to the park.
+            I am looking to bring that same problem-first thinking to a team that is passionate about
+            using technology to make a real difference.
           </p>
+
+          <div class="skills-grid">
+            <div class="skills-column">
+              <ul class="skills-list">
+                <li><span class="skill-arrow">▹</span> Python</li>
+                <li><span class="skill-arrow">▹</span> Flask</li>
+                <li><span class="skill-arrow">▹</span> Streamlit</li>
+                <li><span class="skill-arrow">▹</span> Pandas</li>
+              </ul>
+            </div>
+            <div class="skills-column">
+              <ul class="skills-list">
+                <li><span class="skill-arrow">▹</span> SQL / SQLite</li>
+                <li><span class="skill-arrow">▹</span> Git / GitHub</li>
+                <li><span class="skill-arrow">▹</span> REST APIs</li>
+                <li><span class="skill-arrow">▹</span> PowerShell</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div class="profile-box">
-          <!-- <span>YOUR PHOTO</span> -->
-          <img src="mario.jpeg" alt="Mario" />
-          <!-- Replace this box with an image later if you want:
-    
-          -->
+        <div class="about-photo-wrapper">
+          <div class="photo-frame">
+            <img src="assets/mario-photo.jpg" alt="Mario Centis" class="about-photo" />
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ===== SECTION 02 — EXPERIENCE ===== -->
+    <section id="experience" class="section">
+      <h2 class="section-heading">
+        <span class="section-number">02.</span> Experience
+        <span class="section-line"></span>
+      </h2>
+
+      <div class="tabs-container">
+
+        <!-- Tab Buttons -->
+        <div class="tab-buttons" role="tablist">
+          <button class="tab-btn active" data-tab="civida-analyst" role="tab">Civida — Analyst</button>
+          <button class="tab-btn" data-tab="civida-desk" role="tab">Civida — Service Desk</button>
+          <button class="tab-btn" data-tab="abc" role="tab">Alberta Blue Cross</button>
+        </div>
+
+        <!-- Tab Panels -->
+        <div class="tab-panels">
+
+          <div class="tab-panel active" id="civida-analyst">
+            <h3 class="job-title">IT Technical Analyst <span class="job-company">@ Civida</span></h3>
+            <p class="job-dates"><i class="fas fa-calendar-alt"></i> February 2023 — April 2026</p>
+            <ul class="job-duties">
+              <li>
+                <span class="duty-arrow">▹</span>
+                Built server-based scripts to automate tasks like password resets, user removal,
+                and connections to third-party APIs, cutting process time by <strong>25%</strong>
+              </li>
+              <li>
+                <span class="duty-arrow">▹</span>
+                Administered and maintained the company Microsoft 365 tenant, including user
+                provisioning, license management, and role-based access control via Azure Active Directory
+              </li>
+              <li>
+                <span class="duty-arrow">▹</span>
+                Successfully planned and executed the migration of <strong>7+ TB</strong> of legacy
+                file shares from local servers to a centralized SharePoint Online cloud environment
+              </li>
+              <li>
+                <span class="duty-arrow">▹</span>
+                Collaborated with vendors to reduce system downtime by developing custom IT solutions
+              </li>
+              <li>
+                <span class="duty-arrow">▹</span>
+                Created user guides and flowcharts to enhance internal knowledge sharing across teams
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="civida-desk">
+            <h3 class="job-title">IT Service Desk Analyst <span class="job-company">@ Civida</span></h3>
+            <p class="job-dates"><i class="fas fa-calendar-alt"></i> May 2019 — January 2023</p>
+            <ul class="job-duties">
+              <li>
+                <span class="duty-arrow">▹</span>
+                Deployed Board Management Software to streamline organizational operations
+              </li>
+              <li>
+                <span class="duty-arrow">▹</span>
+                Cut onboarding setup time by <strong>50%</strong> through automation scripts and
+                structured training programs
+              </li>
+              <li>
+                <span class="duty-arrow">▹</span>
+                Resolved <strong>10–15 support tickets daily</strong>, improving average resolution
+                time by 30% through process improvements
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="abc">
+            <h3 class="job-title">Desktop Support Analyst <span class="job-company">@ Alberta Blue Cross</span></h3>
+            <p class="job-dates"><i class="fas fa-calendar-alt"></i> May 2018 — April 2019</p>
+            <ul class="job-duties">
+              <li>
+                <span class="duty-arrow">▹</span>
+                Provided Tier 1 support for all incoming hardware and software tickets
+              </li>
+              <li>
+                <span class="duty-arrow">▹</span>
+                Deployed Windows images and software packages using SCCM across the organization
+              </li>
+              <li>
+                <span class="duty-arrow">▹</span>
+                Built and configured PCs ensuring full compliance with IT security policies
+              </li>
+              <li>
+                <span class="duty-arrow">▹</span>
+                Consistently resolved <strong>15–20 tickets daily</strong> addressing a wide range
+                of hardware and software issues
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 03 — PROJECTS ===== -->
     <section id="projects" class="section">
-      <p class="section-label">02. Projects</p>
-      <h2>Some things I’ve built</h2>
+      <h2 class="section-heading">
+        <span class="section-number">03.</span> Projects
+        <span class="section-line"></span>
+      </h2>
 
-      <div class="projects-grid">
-        <article class="project-card">
-          <p class="project-number">01</p>
-          <h3>Snake Game</h3>
-          <p>
-            Classic Snake game with collision 
-            detection and high score tracking.
-          </p>
-          <ul class="tech-list">
-            <li>Python</li>
-            <li>Pygame</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/codingwithmac/snake_game" target="_blank" rel="noreferrer">
-              GitHub ↗
-            </a>
-            <!--<a href="https://your-live-project-url.com" target="_blank" rel="noreferrer">
-              Live Demo ↗
-            </a> -->
+      <!-- Featured Projects -->
+      <div class="featured-projects">
+
+        <!-- Featured Project Card 1 -->
+        <div class="featured-card">
+          <div class="featured-card-image">
+            <img src="assets/project-placeholder-1.jpg" alt="Project One" />
+            <div class="featured-card-overlay"></div>
           </div>
-        </article>
-
-        <article class="project-card">
-          <p class="project-number">02</p>
-          <h3>Folder/Directory Organizer</h3>
-          <p>
-            Automatically organizes files inside of the
-            Downloads folder placing all items into
-            separate folders based on file type.
-          </p>
-          <ul class="tech-list">
-            <li>Python</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/codingwithmac/directory_clean_up" target="_blank" rel="noreferrer">
-              GitHub ↗
-            </a>
+          <div class="featured-card-content">
+            <p class="featured-label">Featured Project</p>
+            <h3 class="featured-title">Project Title Coming Soon</h3>
+            <div class="featured-description">
+              <p>
+                This is placeholder text for your first featured project. Once you decide which
+                projects to showcase, we will replace this with a real description that explains
+                what you built, why you built it, and what problem it solves.
+              </p>
+            </div>
+            <ul class="featured-tech">
+              <li>Python</li>
+              <li>Flask</li>
+              <li>SQLite</li>
+              <li>Bootstrap</li>
+            </ul>
+            <div class="featured-links">
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            </div>
           </div>
-        </article>
+        </div>
 
-        <article class="project-card">
-          <p class="project-number">03</p>
-          <h3>Personal Finance Tracker</h3>
-          <p>
-            Effortlessly add transactions, view them in
-            a detailed list, and analyze spending trends
-            through interactive plot graph.
+        <!-- Featured Project Card 2 -->
+        <div class="featured-card featured-card-reverse">
+          <div class="featured-card-image">
+            <img src="assets/project-placeholder-2.jpg" alt="Project Two" />
+            <div class="featured-card-overlay"></div>
+          </div>
+          <div class="featured-card-content">
+            <p class="featured-label">Featured Project</p>
+            <h3 class="featured-title">Project Title Coming Soon</h3>
+            <div class="featured-description">
+              <p>
+                Placeholder text for your second featured project. A strong description here
+                will explain the real world problem this project solves and highlight the
+                most impressive technical aspects of your implementation.
+              </p>
+            </div>
+            <ul class="featured-tech">
+              <li>Python</li>
+              <li>Streamlit</li>
+              <li>Pandas</li>
+              <li>Plotly</li>
+            </ul>
+            <div class="featured-links">
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Project Card 3 -->
+        <div class="featured-card">
+          <div class="featured-card-image">
+            <img src="assets/project-placeholder-3.jpg" alt="Project Three" />
+            <div class="featured-card-overlay"></div>
+          </div>
+          <div class="featured-card-content">
+            <p class="featured-label">Featured Project</p>
+            <h3 class="featured-title">Project Title Coming Soon</h3>
+            <div class="featured-description">
+              <p>
+                Placeholder text for your third featured project. We will fill this in once
+                you have decided on your final project lineup and have them polished and
+                deployed with live demo links.
+              </p>
+            </div>
+            <ul class="featured-tech">
+              <li>Python</li>
+              <li>BeautifulSoup</li>
+              <li>Requests</li>
+              <li>SQLite</li>
+            </ul>
+            <div class="featured-links">
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Other Projects Grid -->
+      <h3 class="other-projects-heading">Other Noteworthy Projects</h3>
+      <div class="other-projects-grid">
+
+        <div class="other-card">
+          <div class="other-card-top">
+            <i class="fas fa-folder-open other-folder-icon"></i>
+            <div class="other-card-links">
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <h3 class="other-card-title">Project Name</h3>
+          <p class="other-card-desc">
+            Short description of what this project does and the problem it solves.
+            Placeholder until your final project list is confirmed.
           </p>
-          <ul class="tech-list">
+          <ul class="other-card-tech">
+            <li>Python</li>
+            <li>Tkinter</li>
+            <li>SQLite</li>
+          </ul>
+        </div>
+
+        <div class="other-card">
+          <div class="other-card-top">
+            <i class="fas fa-folder-open other-folder-icon"></i>
+            <div class="other-card-links">
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <h3 class="other-card-title">Project Name</h3>
+          <p class="other-card-desc">
+            Short description of what this project does and the problem it solves.
+            Placeholder until your final project list is confirmed.
+          </p>
+          <ul class="other-card-tech">
             <li>Python</li>
             <li>Pandas</li>
             <li>Matplotlib</li>
           </ul>
-          <div class="project-links">
-            <a href="https://github.com/codingwithmac/personal_finance_tracker" target="_blank" rel="noreferrer">
-              GitHub ↗
-            </a>
+        </div>
+
+        <div class="other-card">
+          <div class="other-card-top">
+            <i class="fas fa-folder-open other-folder-icon"></i>
+            <div class="other-card-links">
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            </div>
           </div>
-        </article>
+          <h3 class="other-card-title">Project Name</h3>
+          <p class="other-card-desc">
+            Short description of what this project does and the problem it solves.
+            Placeholder until your final project list is confirmed.
+          </p>
+          <ul class="other-card-tech">
+            <li>Python</li>
+            <li>Flask</li>
+            <li>Bootstrap</li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
-    <section id="skills" class="section">
-      <p class="section-label">03. Skills</p>
-      <h2>Tools I work with</h2>
-
-      <div class="skills-grid">
-        <div>
-          <h3>Languages</h3>
-          <p>Python, SQL, HTML, CSS, C++, .NET</p>
-        </div>
-        <div>
-          <h3>Libraries</h3>
-          <p>Pandas, PyGame, Matplotlib</p>
-        </div>
-        <!--<div>
-          <h3>Back End</h3>
-          <p>Authorization, REST APIs, Authentication</p>
-        </div>-->
-        <div>
-          <h3>Tools</h3>
-          <p>Git, GitHub, VS Code, PyCharm, Microsoft Azure, Linux</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-      <p class="section-label">04. Contact</p>
-      <h2>Let’s build something</h2>
-      <p>
-        Whether you have a job opportunity, a project idea, or simply want to
-        connect, I’d be happy to hear from you.
+    <!-- ===== SECTION 04 — CONTACT ===== -->
+    <section id="contact" class="section section-contact">
+      <p class="contact-overline">04. What's Next?</p>
+      <h2 class="contact-heading">Get In Touch</h2>
+      <p class="contact-body">
+        I am currently open to new opportunities. Whether you have a question, want to
+        talk about a project, or just want to say hello — my inbox is always open.
+        I will do my best to get back to you as soon as possible.
       </p>
+      <a href="mailto:info@mariocentis.com" class="contact-btn">Say Hello</a>
 
-      <a class="button primary" href="mailto:mcentis@icloud.com">
-        Say hello
-      </a>
+      <footer class="footer">
+        <p>Designed & Built by Mario Centis</p>
+        <p class="footer-sub">Beaumont, Alberta</p>
+      </footer>
     </section>
+
   </main>
 
-  <footer>
-    <p>Designed and built by Mario.</p>
-    <div>
-      <a href="https://github.com/codingwithmac" target="_blank" rel="noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/mariocentis/" target="_blank" rel="noreferrer">LinkedIn</a>
-    </div>
-  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
-
