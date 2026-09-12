@@ -76,7 +76,9 @@ img {
   margin-left: var(--sidebar-width);
   padding: 0 80px;
   max-width: 900px;
+  margin-right: auto;
 }
+
 
 /* ============================================
    SIDEBAR — TOP SECTION
