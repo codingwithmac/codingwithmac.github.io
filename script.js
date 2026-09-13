@@ -33,6 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', setActiveLink);
   setActiveLink();
 
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
+
 
   // ============================================
   //   EXPERIENCE TABS — DIRECT STYLE APPROACH
