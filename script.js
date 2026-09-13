@@ -9,13 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
   function setActiveLink() {
     let currentSection = '';
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150;
-      const sectionHeight = section.offsetHeight;
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        currentSection = section.getAttribute('id');
-      }
-    });
+    const atBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+    if (atBottom) {
+      currentSection = sections[sections.length - 1].getAttribute('id');
+    } else {
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+    }
 
     navLinks.forEach(link => {
       link.classList.remove('active');
