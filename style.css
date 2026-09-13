@@ -202,6 +202,7 @@ img {
 
 .resume-btn:hover {
   background-color: var(--teal-dim);
+   color: var(--teal);
   transform: translateY(-2px);
 }
 
@@ -860,6 +861,7 @@ button {
 
 .contact-btn:hover {
   background-color: var(--teal-dim);
+   color: var(--teal);
   transform: translateY(-3px);
 }
 
