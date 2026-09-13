@@ -1,10 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ============================================
+  //   ACTIVE NAV LINK ON SCROLL
+  // ============================================
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function setActiveLink() {
+    let currentSection = '';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      const sectionHeight = section.offsetHeight;
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', setActiveLink);
+  setActiveLink();
+
+
+  // ============================================
   //   EXPERIENCE TABS — DIRECT STYLE APPROACH
   // ============================================
   const tabButtons = document.querySelectorAll('.tab-btn');
-  const tabPanels  = document.querySelectorAll('.tab-panel');
+  const tabPanels = document.querySelectorAll('.tab-panel');
 
   function hideAllPanels() {
     tabPanels.forEach(panel => {
@@ -14,22 +43,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function deactivateAllButtons() {
-  tabButtons.forEach(btn => {
-    btn.style.background = 'transparent';
-    btn.style.borderLeftColor = 'var(--navy-light)';
+    tabButtons.forEach(btn => {
+      btn.style.background = 'transparent';
+      btn.style.borderLeftColor = 'var(--navy-light)';
+      btn.style.borderLeftWidth = '2px';
+      btn.style.borderLeftStyle = 'solid';
+      btn.style.color = 'var(--text-secondary)';
+    });
+  }
+
+  function activateButton(btn) {
+    btn.style.background = 'rgba(100,255,218,0.05)';
+    btn.style.borderLeftColor = 'var(--green)';
     btn.style.borderLeftWidth = '2px';
     btn.style.borderLeftStyle = 'solid';
-    btn.style.color = 'var(--text-secondary)';
-  });
-}
-
-function activateButton(btn) {
-  btn.style.background = 'rgba(100,255,218,0.05)';
-  btn.style.borderLeftColor = 'var(--green)';
-  btn.style.borderLeftWidth = '2px';
-  btn.style.borderLeftStyle = 'solid';
-  btn.style.color = 'var(--green)';
-}
+    btn.style.color = 'var(--green)';
+  }
 
 
   function showPanel(id) {
@@ -61,23 +90,23 @@ function activateButton(btn) {
     });
   });
 
-// ============================================
-//   TYPING ANIMATION
-// ============================================
-const taglineEl = document.querySelector('.typed-tagline');
-const cursor = document.querySelector('.cursor');
-const text = 'I build useful, thoughtful Python projects.';
-let index = 0;
+  // ============================================
+  //   TYPING ANIMATION
+  // ============================================
+  const taglineEl = document.querySelector('.typed-tagline');
+  const cursor = document.querySelector('.cursor');
+  const text = 'I build useful, thoughtful Python projects.';
+  let index = 0;
 
-function type() {
-  if (index < text.length) {
-    taglineEl.textContent += text.charAt(index);
-    index++;
-    setTimeout(type, 60);
+  function type() {
+    if (index < text.length) {
+      taglineEl.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, 60);
+    }
   }
-}
 
-type();
+  type();
 
 
 }); // end DOMContentLoaded
