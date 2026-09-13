@@ -61,4 +61,23 @@ function activateButton(btn) {
     });
   });
 
+// ============================================
+//   TYPING ANIMATION
+// ============================================
+const taglineEl = document.querySelector('.typed-tagline');
+const cursor = document.querySelector('.cursor');
+const text = 'I build useful, thoughtful Python projects.';
+let index = 0;
+
+function type() {
+  if (index < text.length) {
+    taglineEl.textContent += text.charAt(index);
+    index++;
+    setTimeout(type, 60);
+  }
+}
+
+type();
+
+
 }); // end DOMContentLoaded
